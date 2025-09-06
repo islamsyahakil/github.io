@@ -3,203 +3,286 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Islamsyah Akil - QA Engineer</title>
+  <title>Islamsyah Akil — QA Engineer</title>
+  <meta name="description" content="Portfolio of Islamsyah Akil — QA Engineer specializing in manual & API testing, SQL validation, UAT, and test automation (Playwright, Cypress, Katalon).">
 
-  <!-- SEO & Share -->
-  <meta name="description" content="Islamsyah Akil — QA Engineer with 5+ years of experience in banking & financial services. Skilled in manual testing, API validation with Postman, SQL, and automation tools (Katalon, Playwright, Cypress).">
-  <meta property="og:title" content="Islamsyah Akil - QA Engineer" />
-  <meta property="og:description" content="QA Engineer experienced in manual testing, API testing, SQL validation, UAT coordination, and automation with Playwright, Cypress, and Katalon." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://avatars.githubusercontent.com/u/135784019?s=400&u=4b58607128d2ccbfaa1dca32b5d2506e5bd5dfd3&v=4" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    :root{
+      --bg: #f8fafc;
+      --card: rgba(255,255,255,.96);
+      --ink: #0f172a;
+      --muted:#475569;
+      --muted-2:#64748b;
+      --brand:#4f46e5;
+      --brand-2:#3b82f6;
+      --ring: rgba(2,6,23,.06);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color:var(--ink); background: linear-gradient(135deg,#f8fafc 0%,#eef2ff 45%,#e0f2fe 100%);
+    }
+    body::before{
+      content:""; position:fixed; inset:0; pointer-events:none;
+      background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,.06) 1px, transparent 0);
+      background-size:22px 22px; opacity:.25;
+    }
+    a{color:inherit}
+    .container{max-width:72rem; margin:0 auto; padding:0 1.25rem}
+    .header{
+      position:sticky; top:0; z-index:10; backdrop-filter: blur(8px);
+      background: rgba(255,255,255,.75); border-bottom:1px solid var(--ring);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:.9rem 0}
+    .brand{
+      font-weight:700; font-size:1.05rem;
+      background: linear-gradient(90deg,var(--brand),var(--brand-2));
+      -webkit-background-clip:text; background-clip:text; color:transparent; text-decoration:none;
+    }
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    .hero{position:relative; overflow:hidden; text-align:center; padding:3.5rem 0 2rem}
+    .blob{position:absolute; width:18rem; height:18rem; border-radius:999px; filter:blur(60px); opacity:.5}
+    .blob.left{left:-6rem; top:-6rem; background:#c7d2fe}
+    .blob.right{right:-6rem; bottom:-6rem; background:#bfdbfe}
+    .avatar{
+      width:9rem; height:9rem; border-radius:999px; object-fit:cover; border:4px solid #fff;
+      box-shadow: 0 10px 22px rgba(2,6,23,.1);
+    }
+    .title{
+      margin:.9rem 0 0; font-weight:800; letter-spacing:-.02em;
+      font-size:clamp(2rem,4vw,3rem);
+      background: linear-gradient(90deg,var(--brand),var(--brand-2));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .sub{margin:.45rem 0 0; color:#334155}
 
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    .cta{margin-top:1rem; display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:.5rem; text-decoration:none;
+      padding:.6rem 1.1rem; border-radius:999px; font-weight:600; font-size:.9rem;}
+    .btn.primary{background:#0f172a; color:#fff}
+    .btn.ghost{background: rgba(255,255,255,.9); color:#4338ca; border:1px solid var(--ring)}
 
-  <!-- Favicon simple -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧪</text></svg>">
+    .stats{max-width:28rem; margin:2rem auto 0; display:grid; grid-template-columns:repeat(3,1fr); gap:1rem}
+    .stat{
+      background: rgba(255,255,255,.8); border-radius:.85rem; padding:1rem;
+      box-shadow: 0 8px 18px rgba(2,6,23,.06); border:1px solid var(--ring);
+    }
+    .stat .big{font-weight:800; font-size:1.45rem}
+    .stat .cap{color:var(--muted)}
+
+    section{scroll-margin-top:80px}
+    .card{
+      background:var(--card); border-radius:1rem; padding:2rem;
+      box-shadow: 0 10px 22px rgba(2,6,23,.06); border:1px solid var(--ring)
+    }
+    .h2{font-size:1.45rem; font-weight:700; margin:0}
+    .lead{line-height:1.75; margin-top:1rem}
+    .muted{color:var(--muted-2)}
+
+    .group{margin-top:1rem}
+    .group-title{font-size:.85rem; font-weight:700; color:var(--brand); margin:.25rem 0 .5rem}
+    .badges{display:flex; flex-wrap:wrap; gap:.45rem}
+    .badge{
+      display:inline-block; padding:.28rem .75rem; border-radius:999px;
+      background:#eef2ff; color:#4338ca; font-size:.85rem; border:1px solid rgba(79,70,229,.08)
+    }
+
+    .timeline{position:relative; border-left:3px solid #e2e8f0; margin-top:1rem}
+    .item{padding-left:1rem; margin-bottom:1rem}
+    .item h3{margin:0; font-size:1.075rem; font-weight:700}
+    .when{font-size:.875rem; color:var(--muted-2)}
+    .bullets{margin:.4rem 0 0 1.1rem; line-height:1.65}
+
+    .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1rem; margin-top:1rem}
+    .tile{
+      display:block; text-decoration:none; color:inherit;
+      background: rgba(255,255,255,.85); padding:1.1rem; border-radius:1rem;
+      border:1px solid var(--ring); box-shadow: 0 8px 18px rgba(2,6,23,.06);
+    }
+    .tile h3{margin:.1rem 0 .3rem; color:#4338ca; font-weight:700; font-size:1rem}
+    .tile p{margin:.2rem 0 0; color:#334155; font-size:.92rem}
+
+    footer{margin-top:2rem; padding:2rem 0; border-top:1px solid var(--ring); text-align:center}
+    footer p{color:var(--muted-2); font-size:.9rem}
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased">
-  <!-- Skip to content -->
-  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white rounded-md px-3 py-2 shadow">
-    Skip to main content
-  </a>
+<body>
 
   <!-- Header -->
-  <header class="bg-gradient-to-r from-indigo-600 to-blue-500 text-white py-6 shadow-lg">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-6">
-      <span class="text-2xl font-bold">Islamsyah Akil</span>
-      <p class="text-sm opacity-90">QA Engineer | Automation Enthusiast</p>
-    </div>
+  <header class="header">
+    <nav class="container nav">
+      <a class="brand" href="#">Islamsyah Akil</a>
+    </nav>
   </header>
 
   <!-- Hero -->
-  <section class="text-center py-16" data-aos="fade-up">
-    <div class="flex flex-col items-center">
-      <img
-        src="https://avatars.githubusercontent.com/u/135784019?s=400&u=4b58607128d2ccbfaa1dca32b5d2506e5bd5dfd3&v=4"
-        alt="Islamsyah Akil profile photo"
-        width="200" height="200"
-        class="w-36 h-36 rounded-full border-4 border-indigo-500 shadow-lg hover:scale-105 transition-transform duration-300 object-cover"
-      >
-      <h1 class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight">Islamsyah Akil</h1>
-      <p class="mt-3 text-lg md:text-xl text-gray-600">Quality Assurance Engineer • 5+ Years Experience</p>
-      <!-- Location -->
-      <div class="mt-3 inline-flex items-center gap-2 rounded-full bg-indigo-50 text-indigo-700 px-4 py-1.5 text-sm">
-        📍 <span>Tangerang Selatan, Banten</span>
+  <section class="hero">
+    <div class="blob left"></div>
+    <div class="blob right"></div>
+
+    <div class="container">
+      <img class="avatar" alt="Islamsyah Akil profile photo"
+           src="https://avatars.githubusercontent.com/u/135784019?s=400&u=4b58607128d2ccbfaa1dca32b5d2506e5bd5dfd3&v=4">
+      <h1 class="title">Quality Assurance Engineer</h1>
+      <p class="sub">Tangerang Selatan, Banten • 5+ Years Experience</p>
+
+      <div class="cta">
+        <a class="btn primary" href="mailto:islamsyah.akil@gmail.com">📧 Email</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/islamsyah-akil/" target="_blank" rel="noopener">💼 LinkedIn</a>
+        <a class="btn ghost" href="http://github.com/islamsyahakil/" target="_blank" rel="noopener">🖥️ GitHub</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="big">5+</div>
+          <div class="cap">Years</div>
+        </div>
+        <div class="stat">
+          <div class="big" style="font-size:1rem;">Banking & Financial Services</div>
+          <div class="cap">Domain</div>
+        </div>
+        <div class="stat">
+          <div class="big" style="font-size:1.25rem;">Automation</div>
+          <div class="cap">Playwright</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Bar -->
-  <section class="bg-gradient-to-r from-indigo-600 to-blue-500 py-8">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="flex flex-wrap justify-center gap-3 md:gap-4" data-aos="zoom-in">
-        <a href="mailto:islamsyah.akil@gmail.com"
-           class="inline-flex items-center gap-2 rounded-full bg-white text-indigo-700 px-5 py-2.5 font-medium shadow hover:shadow-xl transition">
-          📧 <span>Email</span>
-        </a>
-        <a href="https://www.linkedin.com/in/islamsyah-akil/" target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center gap-2 rounded-full bg-white text-indigo-700 px-5 py-2.5 font-medium shadow hover:shadow-xl transition">
-          💼 <span>LinkedIn</span>
-        </a>
-        <a href="http://github.com/islamsyahakil/" target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center gap-2 rounded-full bg-white text-indigo-700 px-5 py-2.5 font-medium shadow hover:shadow-xl transition">
-          🖥️ <span>GitHub</span>
-        </a>
-      </div>
-    </div>
-  </section>
+  <main class="container" style="padding-bottom:3rem;">
 
-  <main id="main">
-    <!-- About Me -->
-    <section class="max-w-5xl mx-auto mt-12 px-6" data-aos="fade-up">
-      <article class="bg-white shadow-md rounded-2xl p-8">
-        <h2 class="text-2xl font-semibold text-indigo-700 border-l-4 border-indigo-500 pl-3">About Me</h2>
-        <p class="mt-4 text-gray-700 leading-relaxed">
-          I am a Quality Assurance Engineer with over five years of experience in the banking and financial services industry. My expertise covers <strong>manual testing</strong>, <strong>API validation with Postman</strong>, and <strong>database testing using SQL</strong>. I have solid experience coordinating <strong>User Acceptance Testing (UAT)</strong>, reporting issues to internal teams and vendors, and supporting deployment activities such as smoke testing and risk mitigation.
+    <!-- About -->
+    <section id="about" style="margin-top:1.25rem;">
+      <div class="card">
+        <h2 class="h2">About Me</h2>
+        <p class="lead">
+          I am a Quality Assurance Engineer with over five years of experience in the banking and financial services industry.
+          My expertise covers manual testing, <strong>Postman</strong> for API validation, and database testing using
+          <strong>SQL Server</strong> and <strong>PostgreSQL</strong>. I have solid experience coordinating User Acceptance Testing (UAT),
+          reporting issues to internal teams and vendors, and supporting deployment activities such as smoke testing and risk mitigation.
         </p>
-        <p class="mt-4 text-gray-700 leading-relaxed">
-          Beyond manual testing, I am also experienced with <strong>test automation</strong> using <strong>Katalon Studio</strong>, <strong>Playwright</strong>, and <strong>Cypress</strong>, as well as project management tools like <strong>JIRA</strong>, <strong>Confluence</strong>, and <strong>Zephyr Scale</strong>. I enjoy collaborating with cross-functional teams to ensure smooth delivery and I am committed to maintaining high-quality, reliable software with a keen eye for detail.
+        <p class="lead">
+          Beyond manual testing, I’m experienced with test automation using <strong>Katalon Studio</strong>, <strong>Playwright</strong>, and
+          <strong>Cypress</strong>, and I work closely with teams via <strong>JIRA</strong>, <strong>Confluence</strong>, and <strong>Zephyr Scale</strong>.
+          I enjoy collaborating across functions to ensure smooth delivery, with a keen eye for detail and reliability.
         </p>
-      </article>
+      </div>
     </section>
 
-    <!-- Tech Stack -->
-    <section id="tech-stack" class="max-w-6xl mx-auto mt-12 px-6" data-aos="fade-up">
-      <div class="bg-white shadow-md rounded-2xl p-8">
-        <h2 class="text-2xl font-semibold text-indigo-700 border-l-4 border-indigo-500 pl-3">Tech Stack</h2>
-        <div class="mt-4 flex flex-wrap gap-2 text-sm">
-          <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700"><strong>Playwright</strong></span>
-          <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700"><strong>Cypress</strong></span>
-          <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700"><strong>Katalon Studio</strong></span>
-          <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700"><strong>Postman / Newman</strong></span>
-          <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700"><strong>SQL Server</strong></span>
-          <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700"><strong>PostgreSQL</strong></span>
-          <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700"><strong>JIRA</strong></span>
-          <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700"><strong>Confluence</strong></span>
-          <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700"><strong>Zephyr Scale</strong></span>
-          <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700"><strong>GitHub Actions</strong></span>
-          <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700"><strong>JMeter</strong></span>
+    <!-- Skills & Tools -->
+    <section id="skills" style="margin-top:2rem;">
+      <div class="card">
+        <h2 class="h2">Skills &amp; Tools</h2>
+
+        <div class="group">
+          <div class="group-title">Core QA Skills</div>
+          <div class="badges">
+            <span class="badge">Manual Testing</span>
+            <span class="badge">API Testing</span>
+            <span class="badge">Database Validation</span>
+            <span class="badge">Test Case Design</span>
+            <span class="badge">UAT Coordination</span>
+            <span class="badge">Test Automation</span>
+            <span class="badge">Bug Reporting</span>
+            <span class="badge">Regression Testing</span>
+            <span class="badge">Smoke Testing</span>
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="group-title">Tools &amp; Tech</div>
+          <div class="badges">
+            <span class="badge"><strong>Playwright</strong></span>
+            <span class="badge"><strong>Cypress</strong></span>
+            <span class="badge"><strong>Katalon Studio</strong></span>
+            <span class="badge"><strong>Postman / Newman</strong></span>
+            <span class="badge"><strong>SQL Server</strong></span>
+            <span class="badge"><strong>PostgreSQL</strong></span>
+            <span class="badge"><strong>JIRA</strong></span>
+            <span class="badge"><strong>Confluence</strong></span>
+            <span class="badge"><strong>Zephyr Scale</strong></span>
+            <span class="badge"><strong>GitHub Actions</strong></span>
+            <span class="badge"><strong>JMeter</strong></span>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Experience -->
-    <section id="experience" class="max-w-6xl mx-auto mt-12 px-6" data-aos="fade-up">
-      <div class="bg-white shadow-md rounded-2xl p-8">
-        <h2 class="text-2xl font-semibold text-indigo-700 border-l-4 border-indigo-500 pl-3">Experience</h2>
-        <ol class="mt-6 relative border-s-2 border-indigo-100">
-          
-          <!-- PCS Payment -->
-          <li class="mb-8 ms-6">
-            <span class="absolute -start-3.5 flex h-7 w-7 items-center justify-center rounded-full bg-indigo-600 text-white">🧪</span>
-            <div class="flex flex-wrap items-baseline gap-x-3">
-              <h3 class="text-lg font-semibold">QA Engineer — <span class="text-indigo-700">PCS Payment</span></h3>
-              <span class="text-sm text-gray-500">Aug 2025 – Present</span>
-            </div>
-            <ul class="mt-2 list-disc ps-5 text-sm text-gray-700 space-y-1">
-              <li>Wrote and maintained comprehensive <strong>test cases</strong> for functional and regression coverage.</li>
-              <li>Built and executed automated <strong>smoke</strong> and <strong>regression suites</strong> using <strong>Playwright</strong>.</li>
-            </ul>
-          </li>
+    <section id="experience" style="margin-top:2rem;">
+      <div class="card">
+        <h2 class="h2">Experience</h2>
 
-          <!-- BFI Finance -->
-          <li class="mb-8 ms-6">
-            <span class="absolute -start-3.5 flex h-7 w-7 items-center justify-center rounded-full bg-indigo-600 text-white">🧰</span>
-            <div class="flex flex-wrap items-baseline gap-x-3">
-              <h3 class="text-lg font-semibold">Quality Assurance Engineer — <span class="text-indigo-700">BFI Finance</span></h3>
-              <span class="text-sm text-gray-500">Apr 2020 – Aug 2025</span>
+        <div class="timeline">
+          <article class="item">
+            <div style="display:flex; gap:.5rem; flex-wrap:wrap; align-items:baseline;">
+              <h3>QA Engineer — <span style="color:var(--brand);">PCS Payment</span></h3>
+              <span class="when">Aug 2025 – Present</span>
             </div>
-            <ul class="mt-2 list-disc ps-5 text-sm text-gray-700 space-y-1">
-              <li>Designed and executed test cases and end-to-end scenarios for <strong>web applications</strong>.</li>
-              <li>Conducted manual <strong>API testing</strong> with <strong>Postman</strong> and backend validation using <strong>SQL Server</strong> & <strong>PostgreSQL</strong>.</li>
+            <ul class="bullets">
+              <li>Wrote and maintained comprehensive test cases for functional and regression coverage.</li>
+              <li>Built and executed automated smoke and regression suites using <strong>Playwright</strong>.</li>
+            </ul>
+          </article>
+
+          <article class="item">
+            <div style="display:flex; gap:.5rem; flex-wrap:wrap; align-items:baseline;">
+              <h3>Quality Assurance Engineer — <span style="color:var(--brand);">BFI Finance</span></h3>
+              <span class="when">Apr 2020 – Aug 2025</span>
+            </div>
+            <ul class="bullets">
+              <li>Designed and executed test cases and end-to-end scenarios for web applications.</li>
+              <li>Conducted manual API testing with <strong>Postman</strong> and backend validation using <strong>SQL Server</strong> & <strong>PostgreSQL</strong>.</li>
               <li>Built and maintained automated regression scripts using <strong>Katalon Studio</strong> and <strong>Cypress</strong>.</li>
-              <li>Participated in <strong>SIT & UAT</strong>; tracked defects and tasks in <strong>JIRA</strong> for timely resolution.</li>
+              <li>Tracked defects and tasks in <strong>JIRA</strong> for timely resolution.</li>
               <li>Documented test cases and results in <strong>Confluence</strong> and <strong>Zephyr Scale</strong>.</li>
               <li>Supported deployments with smoke testing, access management, and user assistance.</li>
             </ul>
-          </li>
+          </article>
 
-          <!-- Bank Mega -->
-          <li class="mb-0 ms-6">
-            <span class="absolute -start-3.5 flex h-7 w-7 items-center justify-center rounded-full bg-indigo-600 text-white">🏦</span>
-            <div class="flex flex-wrap items-baseline gap-x-3">
-              <h3 class="text-lg font-semibold">QA / Tester — <span class="text-indigo-700">Bank Mega</span></h3>
-              <span class="text-sm text-gray-500">Aug 2019 – Apr 2020</span>
+          <article class="item" style="margin-bottom:0">
+            <div style="display:flex; gap:.5rem; flex-wrap:wrap; align-items:baseline;">
+              <h3>QA / Tester — <span style="color:var(--brand);">Bank Mega</span></h3>
+              <span class="when">Aug 2019 – Apr 2020</span>
             </div>
-            <ul class="mt-2 list-disc ps-5 text-sm text-gray-700 space-y-1">
+            <ul class="bullets">
               <li>Developed and executed test scripts from functional specifications and requirements.</li>
-              <li>Conducted <strong>UAT</strong>, coordinating with Developers, Business Users, and Project Managers.</li>
-              <li>Performed backend data validation using <strong>SQL</strong> on <strong>AS400</strong> systems.</li>
+              <li>Conducted UAT, coordinating with Developers, Business Users, and Project Managers.</li>
+              <li>Performed backend data validation using <strong>SQL</strong> on AS400 systems.</li>
               <li>Prepared test summary reports, sign-off documents, and final evidence.</li>
               <li>Assisted certification & integration testing with third parties (PLN, OVO).</li>
               <li>Supported production rollout and post-implementation monitoring.</li>
             </ul>
-          </li>
-        </ol>
+          </article>
+        </div>
       </div>
     </section>
 
     <!-- Portfolio -->
-    <section id="portfolio" class="max-w-6xl mx-auto mt-12 px-6" data-aos="fade-up">
-      <div class="bg-white shadow-md rounded-2xl p-8">
-        <h2 class="text-2xl font-semibold text-indigo-700 border-l-4 border-indigo-500 pl-3">Portfolio</h2>
-        <div class="grid md:grid-cols-3 gap-8 mt-8">
-          <a href="TBD" target="_blank" class="block bg-gray-100 rounded-xl shadow p-6 hover:shadow-lg transition" data-aos="zoom-in">
-            <h3 class="text-lg font-bold text-indigo-700">Playwright + Cucumber + GitHub Actions</h3>
-            <p class="mt-2 text-sm text-gray-700">End-to-end automation based on BDD, integrated with CI/CD pipeline.</p>
+    <section id="portfolio" style="margin-top:2rem;">
+      <div class="card">
+        <h2 class="h2">Portfolio</h2>
+        <div class="grid">
+          <a class="tile" href="TBD" target="_blank" rel="noopener">
+            <h3>Playwright + Cucumber</h3>
+            <p>End-to-end automation (BDD).</p>
           </a>
-          <a href="TBD" target="_blank" class="block bg-gray-100 rounded-xl shadow p-6 hover:shadow-lg transition" data-aos="zoom-in">
-            <h3 class="text-lg font-bold text-indigo-700">API Testing with Postman</h3>
-            <p class="mt-2 text-sm text-gray-700">Collection, environment, and data-driven testing for RESTful APIs.</p>
+          <a class="tile" href="TBD" target="_blank" rel="noopener">
+            <h3>API Testing with Postman</h3>
+            <p>Collections, environments, and data-driven testing for RESTful APIs.</p>
           </a>
-          <a href="TBD" target="_blank" class="block bg-gray-100 rounded-xl shadow p-6 hover:shadow-lg transition" data-aos="zoom-in">
-            <h3 class="text-lg font-bold text-indigo-700">Database Testing (SQL Validation)</h3>
-            <p class="mt-2 text-sm text-gray-700">Cross-checking backend, API responses, and UI data using SQL queries.</p>
+          <a class="tile" href="TBD" target="_blank" rel="noopener">
+            <h3>Database Testing (SQL Validation)</h3>
+            <p>Cross-checking backend, API responses, and UI with SQL queries.</p>
           </a>
         </div>
       </div>
     </section>
+
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-indigo-700 text-white text-center py-6 mt-12" data-aos="fade-up">
-    <p>© 2025 Islamsyah Akil | QA Engineer</p>
+  <footer>
+    <p>© 2025 Islamsyah Akil • QA Engineer</p>
   </footer>
-
-  <!-- Script AOS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    (function () {
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!reduceMotion && window.AOS) {
-        AOS.init({ once: true, duration: 600, easing: 'ease-out' });
-      }
-    })();
-  </script>
 </body>
 </html>
