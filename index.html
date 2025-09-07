@@ -4,106 +4,118 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Islamsyah Akil — QA Engineer</title>
-  <meta name="description" content="Portfolio of Islamsyah Akil — QA Engineer specializing in manual & API testing, SQL validation, UAT, and test automation (Playwright, Cypress, Katalon).">
+  <meta name="description" content="QA Engineer with 5+ years in banking & financial services. Manual & API testing, SQL validation, UAT, and automation with Playwright." />
+
+  <!-- Favicon (inline SVG, no external file) -->
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><rect width="100%" height="100%" rx="12" ry="12" fill="%233b82f6"/><text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" font-family="Verdana" font-size="28" fill="white">IA</text></svg>'>
+
+  <!-- (Optional) Plausible Analytics — replace data-domain with your domain or github.io URL -->
+  <!-- <script defer data-domain="islamsyahakil.github.io" src="https://plausible.io/js/script.js"></script> -->
 
   <style>
     :root{
-      --bg: #f8fafc;
-      --card: rgba(255,255,255,.96);
-      --ink: #0f172a;
-      --muted:#475569;
-      --muted-2:#64748b;
-      --brand:#4f46e5;
-      --brand-2:#3b82f6;
-      --ring: rgba(2,6,23,.06);
+      --ink:#0f172a; --muted:#475569; --muted2:#64748b; --ring:rgba(2,6,23,.08);
+      --brand:#4f46e5; --brand2:#3b82f6; --card:rgba(255,255,255,.96);
+      --bg1:#f8fafc; --bg2:#eef2ff; --bg3:#e0f2fe;
     }
     *{box-sizing:border-box}
+    html,body{margin:0}
     body{
-      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      color:var(--ink); background: linear-gradient(135deg,#f8fafc 0%,#eef2ff 45%,#e0f2fe 100%);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--ink);
+      background: linear-gradient(135deg,var(--bg1) 0%,var(--bg2) 45%,var(--bg3) 100%);
     }
     body::before{
       content:""; position:fixed; inset:0; pointer-events:none;
       background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,.06) 1px, transparent 0);
       background-size:22px 22px; opacity:.25;
     }
-    a{color:inherit}
+    a{color:inherit; text-decoration:none}
     .container{max-width:72rem; margin:0 auto; padding:0 1.25rem}
-    .header{
-      position:sticky; top:0; z-index:10; backdrop-filter: blur(8px);
-      background: rgba(255,255,255,.75); border-bottom:1px solid var(--ring);
-    }
+    /* Navbar */
+    .header{position:sticky; top:0; z-index:40; backdrop-filter: blur(8px);
+      background: rgba(255,255,255,.75); border-bottom:1px solid var(--ring);}
     .nav{display:flex; align-items:center; justify-content:space-between; padding:.9rem 0}
     .brand{
       font-weight:700; font-size:1.05rem;
-      background: linear-gradient(90deg,var(--brand),var(--brand-2));
-      -webkit-background-clip:text; background-clip:text; color:transparent; text-decoration:none;
+      background:linear-gradient(90deg,var(--brand),var(--brand2));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
     }
+    .navlinks{display:flex; gap:1rem; font-size:.92rem; color:var(--muted)}
+    .navlinks a{padding:.25rem .5rem; border-radius:.5rem}
+    .navlinks a:hover{background:rgba(59,130,246,.08); color:#1f2937}
 
-    .hero{position:relative; overflow:hidden; text-align:center; padding:3.5rem 0 2rem}
-    .blob{position:absolute; width:18rem; height:18rem; border-radius:999px; filter:blur(60px); opacity:.5}
-    .blob.left{left:-6rem; top:-6rem; background:#c7d2fe}
-    .blob.right{right:-6rem; bottom:-6rem; background:#bfdbfe}
-    .avatar{
-      width:9rem; height:9rem; border-radius:999px; object-fit:cover; border:4px solid #fff;
-      box-shadow: 0 10px 22px rgba(2,6,23,.1);
-    }
+    /* Hero */
+    .hero{position:relative; overflow:hidden; text-align:center; padding:4rem 0 2rem}
+    .blob{position:absolute; width:28rem; height:28rem; border-radius:999px; filter:blur(70px); opacity:.4}
+    .blob.one{left:-10rem; top:-10rem; background:conic-gradient(from 0deg, #a5b4fc, #93c5fd, #a5b4fc); animation:spin 24s linear infinite}
+    .blob.two{right:-12rem; bottom:-12rem; background:conic-gradient(from 0deg, #93c5fd, #a5b4fc, #93c5fd); animation:spin 28s linear infinite reverse}
+    @keyframes spin{to{transform:rotate(1turn)}}
+
+    .avatar{width:9rem;height:9rem;border-radius:999px;object-fit:cover;border:4px solid #fff;box-shadow:0 10px 22px rgba(2,6,23,.12)}
     .title{
       margin:.9rem 0 0; font-weight:800; letter-spacing:-.02em;
       font-size:clamp(2rem,4vw,3rem);
-      background: linear-gradient(90deg,var(--brand),var(--brand-2));
-      -webkit-background-clip:text; background-clip:text; color:transparent;
+      background:linear-gradient(90deg,var(--brand),var(--brand2));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
     }
     .sub{margin:.45rem 0 0; color:#334155}
+    .summary{margin:.6rem auto 0; color:var(--muted); max-width:50rem}
 
     .cta{margin-top:1rem; display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap}
-    .btn{display:inline-flex; align-items:center; gap:.5rem; text-decoration:none;
-      padding:.6rem 1.1rem; border-radius:999px; font-weight:600; font-size:.9rem;}
-    .btn.primary{background:#0f172a; color:#fff}
-    .btn.ghost{background: rgba(255,255,255,.9); color:#4338ca; border:1px solid var(--ring)}
+    .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.6rem 1.1rem; border-radius:999px; font-weight:600; font-size:.9rem; border:1px solid var(--ring)}
+    .btn.primary{background:#0f172a;color:#fff;border-color:transparent}
+    .btn.ghost{background:rgba(255,255,255,.92);color:#4338ca}
 
     .stats{max-width:28rem; margin:2rem auto 0; display:grid; grid-template-columns:repeat(3,1fr); gap:1rem}
-    .stat{
-      background: rgba(255,255,255,.8); border-radius:.85rem; padding:1rem;
-      box-shadow: 0 8px 18px rgba(2,6,23,.06); border:1px solid var(--ring);
-    }
-    .stat .big{font-weight:800; font-size:1.45rem}
+    .stat{background:rgba(255,255,255,.85); border-radius:.9rem; padding:1rem; box-shadow:0 8px 18px rgba(2,6,23,.06); border:1px solid var(--ring)}
+    .stat .big{font-weight:800;font-size:1.45rem}
     .stat .cap{color:var(--muted)}
 
+    /* Sections */
     section{scroll-margin-top:80px}
-    .card{
-      background:var(--card); border-radius:1rem; padding:2rem;
-      box-shadow: 0 10px 22px rgba(2,6,23,.06); border:1px solid var(--ring)
-    }
+    .card{background:var(--card); border-radius:1rem; padding:2rem; box-shadow:0 10px 22px rgba(2,6,23,.06); border:1px solid var(--ring)}
     .h2{font-size:1.45rem; font-weight:700; margin:0}
     .lead{line-height:1.75; margin-top:1rem}
-    .muted{color:var(--muted-2)}
+    .muted{color:var(--muted2)}
 
+    /* Skills badges with icons */
     .group{margin-top:1rem}
     .group-title{font-size:.85rem; font-weight:700; color:var(--brand); margin:.25rem 0 .5rem}
     .badges{display:flex; flex-wrap:wrap; gap:.45rem}
-    .badge{
-      display:inline-block; padding:.28rem .75rem; border-radius:999px;
-      background:#eef2ff; color:#4338ca; font-size:.85rem; border:1px solid rgba(79,70,229,.08)
-    }
+    .badge{display:inline-flex; align-items:center; gap:.4rem; padding:.34rem .75rem; border-radius:999px; background:#eef2ff; color:#4338ca; font-size:.88rem; border:1px solid rgba(79,70,229,.1)}
+    .ico{font-size:1rem}
 
-    .timeline{position:relative; border-left:3px solid #e2e8f0; margin-top:1rem}
-    .item{padding-left:1rem; margin-bottom:1rem}
+    /* Experience timeline */
+    .timeline{position:relative; margin-top:1.25rem}
+    .timeline::before{content:""; position:absolute; left:10px; top:0; bottom:0; width:2px; background:#e2e8f0}
+    .item{position:relative; padding-left:2rem; margin-bottom:1.25rem}
+    .item::before{content:""; position:absolute; left:4px; top:.35rem; width:12px;height:12px;border-radius:999px;background:linear-gradient(90deg,var(--brand),var(--brand2)); box-shadow:0 0 0 3px #fff}
     .item h3{margin:0; font-size:1.075rem; font-weight:700}
-    .when{font-size:.875rem; color:var(--muted-2)}
-    .bullets{margin:.4rem 0 0 1.1rem; line-height:1.65}
+    .when{font-size:.875rem; color:var(--muted2)}
+    .bullets{margin:.4rem 0 0 1.15rem; line-height:1.65}
 
-    .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1rem; margin-top:1rem}
-    .tile{
-      display:block; text-decoration:none; color:inherit;
-      background: rgba(255,255,255,.85); padding:1.1rem; border-radius:1rem;
-      border:1px solid var(--ring); box-shadow: 0 8px 18px rgba(2,6,23,.06);
-    }
-    .tile h3{margin:.1rem 0 .3rem; color:#4338ca; font-weight:700; font-size:1rem}
-    .tile p{margin:.2rem 0 0; color:#334155; font-size:.92rem}
+    /* Portfolio cards */
+    .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; margin-top:1rem}
+    .tile{position:relative; display:block; overflow:hidden; border-radius:1rem; border:1px solid var(--ring); box-shadow:0 8px 18px rgba(2,6,23,.06); background:#fff}
+    .thumb{display:block; width:100%; height:160px; object-fit:cover; background:#e5e7eb}
+    .tile-body{padding:1rem}
+    .tile h3{margin:0 0 .3rem; color:#4338ca; font-weight:700; font-size:1rem}
+    .tile p{margin:.2rem 0 0; color:#334155; font-size:.94rem}
+    .overlay{position:absolute; inset:0; background:linear-gradient(180deg,rgba(15,23,42,.0),rgba(15,23,42,.6)); display:flex; align-items:flex-end; justify-content:center; opacity:0; transition:.25s}
+    .tile:hover .overlay{opacity:1}
+    .overlay .actions{display:flex; gap:.5rem; margin:1rem}
+    .chip{background:#0f172a;color:#fff;padding:.5rem .8rem;border-radius:.75rem;font-size:.85rem;border:1px solid rgba(255,255,255,.1)}
 
+    /* Contact form */
+    .form{display:grid; gap:.75rem; margin-top:1rem}
+    .in{padding:.7rem .9rem; border-radius:.6rem; border:1px solid var(--ring); font:inherit}
+    .btn-send{margin-top:.4rem; background:linear-gradient(90deg,var(--brand),var(--brand2)); color:#fff; border:none; padding:.7rem 1rem; border-radius:.7rem; font-weight:700; cursor:pointer}
+    .btn-send:hover{filter:brightness(.95)}
+
+    /* Footer */
     footer{margin-top:2rem; padding:2rem 0; border-top:1px solid var(--ring); text-align:center}
-    footer p{color:var(--muted-2); font-size:.9rem}
+    footer p{color:var(--muted2); font-size:.9rem}
   </style>
 </head>
 <body>
@@ -112,13 +124,20 @@
   <header class="header">
     <nav class="container nav">
       <a class="brand" href="#">Islamsyah Akil</a>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
     </nav>
   </header>
 
   <!-- Hero -->
   <section class="hero">
-    <div class="blob left"></div>
-    <div class="blob right"></div>
+    <div class="blob one"></div>
+    <div class="blob two"></div>
 
     <div class="container">
       <img class="avatar" alt="Islamsyah Akil profile photo"
@@ -126,25 +145,25 @@
       <h1 class="title">Quality Assurance Engineer</h1>
       <p class="sub">Tangerang Selatan, Banten • 5+ Years Experience</p>
 
+      <!-- Professional Summary (singkat) -->
+      <p class="summary">
+        QA Engineer focused on delivering reliable software in banking & financial services.
+        Strong in manual testing, <b>Postman</b> for API validation, and data checks with <b>SQL Server</b> & <b>PostgreSQL</b>.
+        Practical automation with <b>Playwright</b> to speed up smoke & regression.
+      </p>
+
+      <!-- CTA -->
       <div class="cta">
         <a class="btn primary" href="mailto:islamsyah.akil@gmail.com">📧 Email</a>
         <a class="btn ghost" href="https://www.linkedin.com/in/islamsyah-akil/" target="_blank" rel="noopener">💼 LinkedIn</a>
         <a class="btn ghost" href="http://github.com/islamsyahakil/" target="_blank" rel="noopener">🖥️ GitHub</a>
       </div>
 
+      <!-- Stats -->
       <div class="stats">
-        <div class="stat">
-          <div class="big">5+</div>
-          <div class="cap">Years</div>
-        </div>
-        <div class="stat">
-          <div class="big" style="font-size:1rem;">Banking & Financial Services</div>
-          <div class="cap">Domain</div>
-        </div>
-        <div class="stat">
-          <div class="big" style="font-size:1.25rem;">Automation</div>
-          <div class="cap">Playwright</div>
-        </div>
+        <div class="stat"><div class="big">5+</div><div class="cap">Years</div></div>
+        <div class="stat"><div class="big" style="font-size:1rem;">Banking & Financial Services</div><div class="cap">Domain</div></div>
+        <div class="stat"><div class="big" style="font-size:1.2rem;">Automation</div><div class="cap">Playwright</div></div>
       </div>
     </div>
   </section>
@@ -177,34 +196,56 @@
         <div class="group">
           <div class="group-title">Core QA Skills</div>
           <div class="badges">
-            <span class="badge">Manual Testing</span>
-            <span class="badge">API Testing</span>
-            <span class="badge">Database Validation</span>
-            <span class="badge">Test Case Design</span>
-            <span class="badge">UAT Coordination</span>
-            <span class="badge">Test Automation</span>
-            <span class="badge">Bug Reporting</span>
-            <span class="badge">Regression Testing</span>
-            <span class="badge">Smoke Testing</span>
+            <span class="badge"><span class="ico">🧩</span>Manual Testing</span>
+            <span class="badge"><span class="ico">🔗</span>API Testing</span>
+            <span class="badge"><span class="ico">🗄️</span>Database Validation</span>
+            <span class="badge"><span class="ico">📝</span>Test Case Design</span>
+            <span class="badge"><span class="ico">🤝</span>UAT Coordination</span>
+            <span class="badge"><span class="ico">⚙️</span>Test Automation</span>
+            <span class="badge"><span class="ico">🐞</span>Bug Reporting</span>
+            <span class="badge"><span class="ico">♻️</span>Regression Testing</span>
+            <span class="badge"><span class="ico">🚦</span>Smoke Testing</span>
           </div>
         </div>
 
         <div class="group">
           <div class="group-title">Tools &amp; Tech</div>
           <div class="badges">
-            <span class="badge"><strong>Playwright</strong></span>
-            <span class="badge"><strong>Cypress</strong></span>
-            <span class="badge"><strong>Katalon Studio</strong></span>
-            <span class="badge"><strong>Postman / Newman</strong></span>
-            <span class="badge"><strong>SQL Server</strong></span>
-            <span class="badge"><strong>PostgreSQL</strong></span>
-            <span class="badge"><strong>JIRA</strong></span>
-            <span class="badge"><strong>Confluence</strong></span>
-            <span class="badge"><strong>Zephyr Scale</strong></span>
-            <span class="badge"><strong>GitHub Actions</strong></span>
-            <span class="badge"><strong>JMeter</strong></span>
+            <span class="badge"><span class="ico">🧪</span><strong>Playwright</strong></span>
+            <span class="badge"><span class="ico">🌲</span><strong>Cypress</strong></span>
+            <span class="badge"><span class="ico">🤖</span><strong>Katalon Studio</strong></span>
+            <span class="badge"><span class="ico">📮</span><strong>Postman / Newman</strong></span>
+            <span class="badge"><span class="ico">🗄️</span><strong>SQL Server</strong></span>
+            <span class="badge"><span class="ico">🐘</span><strong>PostgreSQL</strong></span>
+            <span class="badge"><span class="ico">📌</span><strong>JIRA</strong></span>
+            <span class="badge"><span class="ico">📚</span><strong>Confluence</strong></span>
+            <span class="badge"><span class="ico">✅</span><strong>Zephyr Scale</strong></span>
+            <span class="badge"><span class="ico">⚡</span><strong>GitHub Actions</strong></span>
+            <span class="badge"><span class="ico">📈</span><strong>JMeter</strong></span>
           </div>
         </div>
+
+        <!-- Soft Skills & Languages -->
+        <div class="group" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; margin-top:1rem;">
+          <div>
+            <div class="group-title">Soft Skills</div>
+            <div class="badges">
+              <span class="badge"><span class="ico">💬</span>Communication</span>
+              <span class="badge"><span class="ico">🤝</span>Teamwork</span>
+              <span class="badge"><span class="ico">🧠</span>Problem-Solving</span>
+              <span class="badge"><span class="ico">⏱️</span>Detail-Oriented</span>
+              <span class="badge"><span class="ico">📊</span>Analytical Thinking</span>
+            </div>
+          </div>
+          <div>
+            <div class="group-title">Languages</div>
+            <div class="badges">
+              <span class="badge"><span class="ico">🇮🇩</span>Indonesian — Native</span>
+              <span class="badge"><span class="ico">🇬🇧</span>English — Professional</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -212,7 +253,6 @@
     <section id="experience" style="margin-top:2rem;">
       <div class="card">
         <h2 class="h2">Experience</h2>
-
         <div class="timeline">
           <article class="item">
             <div style="display:flex; gap:.5rem; flex-wrap:wrap; align-items:baseline;">
@@ -258,23 +298,75 @@
       </div>
     </section>
 
-    <!-- Portfolio -->
+    <!-- Portfolio (interactive cards) -->
     <section id="portfolio" style="margin-top:2rem;">
       <div class="card">
         <h2 class="h2">Portfolio</h2>
         <div class="grid">
+          <!-- Card 1 -->
           <a class="tile" href="TBD" target="_blank" rel="noopener">
-            <h3>Playwright + Cucumber</h3>
-            <p>End-to-end automation (BDD).</p>
+            <img class="thumb" alt="Playwright BDD with GitHub Actions" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop">
+            <div class="tile-body">
+              <h3>Playwright + Cucumber + GitHub Actions</h3>
+              <p>End-to-end automation (BDD) with CI/CD checks on PRs.</p>
+            </div>
+            <div class="overlay">
+              <div class="actions">
+                <span class="chip">View Repo</span>
+                <span class="chip">Case Study</span>
+              </div>
+            </div>
           </a>
+
+          <!-- Card 2 -->
           <a class="tile" href="TBD" target="_blank" rel="noopener">
-            <h3>API Testing with Postman</h3>
-            <p>Collections, environments, and data-driven testing for RESTful APIs.</p>
+            <img class="thumb" alt="API Testing Postman" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop">
+            <div class="tile-body">
+              <h3>API Testing with Postman</h3>
+              <p>Collections, environments, and data-driven testing for RESTful APIs.</p>
+            </div>
+            <div class="overlay">
+              <div class="actions">
+                <span class="chip">View Repo</span>
+                <span class="chip">Docs</span>
+              </div>
+            </div>
           </a>
+
+          <!-- Card 3 -->
           <a class="tile" href="TBD" target="_blank" rel="noopener">
-            <h3>Database Testing (SQL Validation)</h3>
-            <p>Cross-checking backend, API responses, and UI with SQL queries.</p>
+            <img class="thumb" alt="Database testing SQL" src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop">
+            <div class="tile-body">
+              <h3>Database Testing (SQL Validation)</h3>
+              <p>Cross-checking backend, API responses, and UI with SQL queries.</p>
+            </div>
+            <div class="overlay">
+              <div class="actions">
+                <span class="chip">View Repo</span>
+                <span class="chip">Queries</span>
+              </div>
+            </div>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="margin-top:2rem;">
+      <div class="card">
+        <h2 class="h2">Contact</h2>
+        <p class="muted">Feel free to reach out for collaboration, opportunities, or questions.</p>
+
+        <!-- Replace action with your Formspree endpoint -->
+        <form class="form" action="https://formspree.io/f/your-id" method="POST">
+          <input class="in" type="text" name="name" placeholder="Your name" required>
+          <input class="in" type="email" name="email" placeholder="Email address" required>
+          <textarea class="in" name="message" rows="5" placeholder="Your message..." required></textarea>
+          <button class="btn-send" type="submit">Send Message</button>
+        </form>
+
+        <div style="margin-top:1rem; color:var(--muted2); font-size:.92rem;">
+          Or email directly: <a href="mailto:islamsyah.akil@gmail.com" style="text-decoration:underline">islamsyah.akil@gmail.com</a>
         </div>
       </div>
     </section>
