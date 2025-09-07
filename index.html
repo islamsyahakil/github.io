@@ -102,10 +102,6 @@
     .tile-body{padding:1rem}
     .tile h3{margin:0 0 .3rem; color:#4338ca; font-weight:700; font-size:1rem}
     .tile p{margin:.2rem 0 0; color:#334155; font-size:.94rem}
-    .overlay{position:absolute; inset:0; background:linear-gradient(180deg,rgba(15,23,42,.0),rgba(15,23,42,.6)); display:flex; align-items:flex-end; justify-content:center; opacity:0; transition:.25s}
-    .tile:hover .overlay{opacity:1}
-    .overlay .actions{display:flex; gap:.5rem; margin:1rem}
-    .chip{background:#0f172a;color:#fff;padding:.5rem .8rem;border-radius:.75rem;font-size:.85rem;border:1px solid rgba(255,255,255,.1)}
 
     /* Contact form */
     .form{display:grid; gap:.75rem; margin-top:1rem}
@@ -143,7 +139,7 @@
       <img class="avatar" alt="Islamsyah Akil profile photo"
            src="https://avatars.githubusercontent.com/u/135784019?s=400&u=4b58607128d2ccbfaa1dca32b5d2506e5bd5dfd3&v=4">
       <h1 class="title">Quality Assurance Engineer</h1>
-      <p class="sub">Tangerang Selatan, Banten • 5+ Years Experience</p>
+      <p class="sub">Tangerang Selatan, Banten • 6+ Years Experience</p>
 
       <!-- Professional Summary (singkat) -->
       <p class="summary">
@@ -161,7 +157,7 @@
 
       <!-- Stats -->
       <div class="stats">
-        <div class="stat"><div class="big">5+</div><div class="cap">Years</div></div>
+        <div class="stat"><div class="big">6+</div><div class="cap">Years</div></div>
         <div class="stat"><div class="big" style="font-size:1rem;">Banking & Financial Services</div><div class="cap">Domain</div></div>
         <div class="stat"><div class="big" style="font-size:1.2rem;">Automation</div><div class="cap">Playwright</div></div>
       </div>
@@ -298,53 +294,35 @@
       </div>
     </section>
 
-    <!-- Portfolio (interactive cards) -->
+    <!-- Portfolio (simplified cards, no overlay/chips) -->
     <section id="portfolio" style="margin-top:2rem;">
       <div class="card">
         <h2 class="h2">Portfolio</h2>
         <div class="grid">
           <!-- Card 1 -->
-          <a class="tile" href="TBD" target="_blank" rel="noopener">
+          <a class="tile" href="https://github.com/islamsyahakil/playwright-demoblaze" target="_blank" rel="noopener">
             <img class="thumb" alt="Playwright BDD with GitHub Actions" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop">
             <div class="tile-body">
               <h3>Playwright + Cucumber + GitHub Actions</h3>
               <p>End-to-end automation (BDD) with CI/CD checks on PRs.</p>
             </div>
-            <div class="overlay">
-              <div class="actions">
-                <span class="chip">View Repo</span>
-                <span class="chip">Case Study</span>
-              </div>
-            </div>
           </a>
 
-          <!-- Card 2 -->
-          <a class="tile" href="TBD" target="_blank" rel="noopener">
-            <img class="thumb" alt="API Testing Postman" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop">
+          <!-- Card 2 (API Testing) -->
+          <a class="tile" href="https://github.com/islamsyahakil/OpenDota-API-Tests" target="_blank" rel="noopener">
+            <img class="thumb" alt="API Testing Postman" src="https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?q=80&w=1200&auto=format&fit=crop">
             <div class="tile-body">
               <h3>API Testing with Postman</h3>
               <p>Collections, environments, and data-driven testing for RESTful APIs.</p>
             </div>
-            <div class="overlay">
-              <div class="actions">
-                <span class="chip">View Repo</span>
-                <span class="chip">Docs</span>
-              </div>
-            </div>
           </a>
 
-          <!-- Card 3 -->
-          <a class="tile" href="TBD" target="_blank" rel="noopener">
-            <img class="thumb" alt="Database testing SQL" src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop">
+          <!-- Card 3 (Database Testing) -->
+          <a class="tile" href="https://github.com/islamsyahakil/sql-WideWorldImporters" target="_blank" rel="noopener">
+            <img class="thumb" alt="Database testing SQL" src="https://images.unsplash.com/photo-1556155092-8707de31f9c4?q=80&w=1200&auto=format&fit=crop">
             <div class="tile-body">
               <h3>Database Testing (SQL Validation)</h3>
               <p>Cross-checking backend, API responses, and UI with SQL queries.</p>
-            </div>
-            <div class="overlay">
-              <div class="actions">
-                <span class="chip">View Repo</span>
-                <span class="chip">Queries</span>
-              </div>
             </div>
           </a>
         </div>
@@ -357,8 +335,8 @@
         <h2 class="h2">Contact</h2>
         <p class="muted">Feel free to reach out for collaboration, opportunities, or questions.</p>
 
-        <!-- Replace action with your Formspree endpoint -->
-        <form class="form" action="https://formspree.io/f/your-id" method="POST">
+        <!-- Formspree endpoint aktif -->
+        <form class="form" action="https://formspree.io/f/xandabwl" method="POST">
           <input class="in" type="text" name="name" placeholder="Your name" required>
           <input class="in" type="email" name="email" placeholder="Email address" required>
           <textarea class="in" name="message" rows="5" placeholder="Your message..." required></textarea>
